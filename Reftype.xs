@@ -21,7 +21,7 @@ bool href( SV *x )
 }
 
 
-MODULE = Scalar::RefType		PACKAGE = Scalar::RefType		
+MODULE = Scalar::Reftype		PACKAGE = Scalar::Reftype		
 
 
 bool

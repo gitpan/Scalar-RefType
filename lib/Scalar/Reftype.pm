@@ -1,4 +1,4 @@
-package Scalar::RefType;
+package Scalar::Reftype;
 
 use 5.020000;
 use strict;
@@ -12,7 +12,7 @@ our @ISA = qw(Exporter);
 # names by default without a very good reason. Use EXPORT_OK instead.
 # Do not simply export all your public functions/methods/constants.
 
-# This allows declaration	use Scalar::RefType ':all';
+# This allows declaration	use Scalar::Reftype ':all';
 # If you do not need this, moving things directly into @EXPORT or @EXPORT_OK
 # will save memory.
 our %EXPORT_TAGS = ( 'all' => [ qw(
@@ -27,7 +27,7 @@ our @EXPORT    = ( @{ $EXPORT_TAGS{'all'} } );
 our $VERSION = '0.01';
 
 require XSLoader;
-XSLoader::load('Scalar::RefType', $VERSION);
+XSLoader::load('Scalar::Reftype', $VERSION);
 
 # Preloaded methods go here.
 
@@ -37,11 +37,11 @@ __END__
 
 =head1 NAME
 
-Scalar::RefType - Perl extension for getting the reftype of a scalar ref
+Scalar::Reftype - Perl extension for getting the reftype of a scalar ref
 
 =head1 SYNOPSIS
 
-  use Scalar::RefType;
+  use Scalar::Reftype;
   my $x = \1;
   my $y = ['a' .. 'z'];
   my $z = { a => 1, b => 2};
