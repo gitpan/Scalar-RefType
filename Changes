@@ -1,6 +1,8 @@
-Revision history for Perl extension Scalar::Reftype.
+Revision history for Perl extension Scalar::RefType.
 
+0.02  Sat Oct 25 10:26:49 2014
+    - fix href return true for obj, add test
 0.01  Sat Oct 18 01:56:49 2014
 	- original version; created by h2xs 1.23 with options
-		-A -n Scalar::Reftype
+		-A -n Scalar::RefType
 

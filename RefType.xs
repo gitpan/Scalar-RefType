@@ -15,13 +15,14 @@ bool aref( SV *x )
     return  SvROK(x) && ( SvTYPE( SvRV(x) ) == SVt_PVAV );
 }
 
-bool href( SV *x )
-{
-    return  SvROK(x) && ( SvTYPE( SvRV(x) ) == SVt_PVHV );
+
+bool href( SV *x ) {
+         return SvROK(x)
+      && ( SvTYPE( SvRV(x) ) == SVt_PVHV )
+      && ( !SvOBJECT( SvRV(x) ) );
 }
 
-
-MODULE = Scalar::Reftype		PACKAGE = Scalar::Reftype		
+MODULE = Scalar::RefType		PACKAGE = Scalar::RefType		
 
 
 bool

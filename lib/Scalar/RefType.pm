@@ -1,4 +1,4 @@
-package Scalar::Reftype;
+package Scalar::RefType;
 
 use 5.020000;
 use strict;
@@ -8,28 +8,13 @@ require Exporter;
 
 our @ISA = qw(Exporter);
 
-# Items to export into callers namespace by default. Note: do not export
-# names by default without a very good reason. Use EXPORT_OK instead.
-# Do not simply export all your public functions/methods/constants.
+our @EXPORT = qw( sref aref href);
 
-# This allows declaration	use Scalar::Reftype ':all';
-# If you do not need this, moving things directly into @EXPORT or @EXPORT_OK
-# will save memory.
-our %EXPORT_TAGS = ( 'all' => [ qw(
-        sref 
-        aref
-        href
-) ] );
-
-our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
-our @EXPORT    = ( @{ $EXPORT_TAGS{'all'} } );
-
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 require XSLoader;
-XSLoader::load('Scalar::Reftype', $VERSION);
+XSLoader::load('Scalar::RefType', $VERSION);
 
-# Preloaded methods go here.
 
 1;
 
@@ -37,11 +22,11 @@ __END__
 
 =head1 NAME
 
-Scalar::Reftype - Perl extension for getting the reftype of a scalar ref
+Scalar::RefType - Perl extension for getting the reftype of a scalar ref
 
 =head1 SYNOPSIS
 
-  use Scalar::Reftype;
+  use Scalar::RefType;
   my $x = \1;
   my $y = ['a' .. 'z'];
   my $z = { a => 1, b => 2};
@@ -59,17 +44,17 @@ it is easy to use sref, aref, href to know the ref type
 
 =head2 sref
 
-    accept one and only one argument, otherwise die
+    accept one and only one argument
     return true if the arg is a scalar ref
 
 =head2 aref
 
-    accept one and only one argument, otherwise die
+    accept one and only one argument
     return true if the arg is a array ref
 
 =head2 href
 
-    accept one and only one argument, otherwise die
+    accept one and only one argument
     return true if the arg is a hash ref
 
 =head1 AUTHOR
